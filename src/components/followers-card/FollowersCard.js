@@ -1,4 +1,4 @@
-import "./Profile.scss";
+import "./FollowersCard.scss";
 
 export default function Profile(){
     return(
