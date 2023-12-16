@@ -1,0 +1,47 @@
+@use "./../scss/base";
+
+
+
+
+header {
+    background-color:black;
+    color: base.$color-white;
+    background-image: url("./../../images/header-bgimage.jpeg");
+    background-repeat:repeat-y;
+    background-attachment: fixed;
+    padding-bottom:40px;
+   
+    
+}
+
+.headertag {
+
+    display: flex;
+    background-color: rgb(31, 31, 51);
+    width: 50%;
+    height: auto;
+    margin-left: 30%;
+    border-radius: 20px;
+    margin-top: 10px;
+
+
+    img {
+    
+        width: 80px;
+        height: auto;
+        border-radius: 10px;
+        margin: 10px;
+    }
+
+}
+.tagDescription {
+    margin-left:10px;
+
+    h4 {
+        font-weight: 700;
+        margin-top:20px;
+    }
+    p{
+        padding-bottom: 20px;
+    }
+}

@@ -1,10 +1,17 @@
 import "./SearchForm.scss";
 
-export default function Search(){
+export default function SearchForm(){
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
     return (
-        <form>
-            <input/>
-           <button>Submit</button>
+        <form onSubmit={handleSubmit}>
+            <input
+            type ="search"
+            value =""
+            onchange = ""
+            placeholder="github"
+            />
         </form>
     )
 };
