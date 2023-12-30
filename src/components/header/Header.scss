@@ -2,7 +2,10 @@
 
 
 
-
+body{
+    background-color: base.$primary-color;
+    color:base.$color-white;
+}
 header {
     background-color:black;
     color: base.$color-white;
@@ -11,8 +14,6 @@ header {
     background-attachment: fixed;
     padding-bottom:40px;
     padding-top: 20px;
-   
-    
 }
 
 .headertag {
