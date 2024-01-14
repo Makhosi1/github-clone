@@ -2,23 +2,23 @@ import { useEffect, useState } from "react";
 import "./SearchForm.scss";
 import { FaSearch } from "react-icons/fa";
 
-export default function SearchForm(){
+export default function SearchForm({submitSearch}){
    
-    const [searchValue,setSearchValue] = useState("Makhosi1");
+    const [searchValue,setSearchValue] = useState("");
 
-    
-    
 
     const handleChange = (searchValue) => {
         setSearchValue(searchValue);
         
     }
     
-    const handleSearch = (e) => {
+    const handleSearch = async (e) => {
         e.preventDefault();
-        const results = fetch(`https://api.github.com/users/${searchValue}`)
-        .then(data => data.json);
-        console.log(results);
+        submitSearch(searchValue);
+        /*const response = await fetch(`https://api.github.com/users/${searchValue}`);
+        const data = await response.json();
+        console.log(data);
+        */
     } 
 
     return (
@@ -26,10 +26,10 @@ export default function SearchForm(){
            <form onSubmit={handleSearch}>
             <FaSearch id="search-icon"/>
             <input
-            type ="search"
+            type = "search"
             value = {searchValue}
             onChange = {e => handleChange(e.target.value)}
-            placeholder="github"
+            placeholder="username"
             />
             </form>
         </div>

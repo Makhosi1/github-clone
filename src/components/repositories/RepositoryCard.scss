@@ -1,0 +1,31 @@
+@use "./../scss/base";
+
+
+.repos {
+
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: column;
+    margin-left: 10%;
+    justify-content: space-between;
+
+    .each-repo {
+        width: 48%;
+        margin-bottom: 50px;
+        background-color: base.$secondary-color;
+        border-radius: 10px;
+        height: auto;
+        background: linear-gradient(to right, rgba(19, 25, 48, 1), rgba(28, 28, 69, 0.4));
+    }
+
+    h3,
+    p {
+        padding-left: 20px;
+    }
+
+}
+
+#star {
+    padding-left: 20px;
+}

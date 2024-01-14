@@ -2,7 +2,7 @@
 import SearchForm from "../search/SearchForm";
 import "./Header.scss";
 
-export default function Header (){
+export default function Header ({setSearchValue}){
    
     
 
@@ -10,6 +10,7 @@ export default function Header (){
         <div>
             <header>
             <SearchForm
+            submitSearch = {setSearchValue}
             />
             <div className="headertag">
             <img src="github-logo1.png" alt="github logo" />
