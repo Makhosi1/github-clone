@@ -1,0 +1,31 @@
+1. Design the store 
+. what data is needed to be saved in the redux store 
+-user data 
+-list of respositories 
+- each repository
+
+2. Define the actions 
+. for user data 
+* set user (after searching for the user)
+- form of data being received {}
+- need to save user details in the store 
+* clear user details 
+- clear the previous user to allow to search for another one
+
+. list of repositories 
+* set repositories 
+-after searching the user, you need to save the list of repos to the store 
+- form of data received []
+* clear data
+- selected repo
+
+. each repository
+* set repository
+- after clicking a specific repo, we need to save the repo detail in the store 
+- form of data being received {}
+* clear data
+- clear the selected repo data
+
+3. Create a reducer 
+
+4. Set up the store 
