@@ -14,9 +14,7 @@ export const setRepositoriesData = (repositoriesData) => ({
     payload: repositoriesData
 });
 
-/*
-export const setEachRepoDetail = () => ({
+export const setEachRepoDetail = (eachRepoData) => ({
     type: "SET_EACH_REPO_DETAIL",
-    payload: repositoryData
-})
-*/
+    payload: eachRepoData
+});

@@ -1,9 +1,0 @@
-import "./FollowersCard.scss";
-
-export default function Profile(){
-    return(
-        <div>
-            
-        </div>
-    )
-}

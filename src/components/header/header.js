@@ -1,17 +1,14 @@
-//import { useEffect, useState } from "react";
 import SearchForm from "../search/SearchForm";
 import "./Header.scss";
 
-export default function Header ({setSearchValue}){
+export default function Header (){
    
     
 
     return(
         <div>
             <header>
-            <SearchForm
-            submitSearch = {setSearchValue}
-            />
+            <SearchForm/>
             <div className="headertag">
             <img src="github-logo1.png" alt="github logo" />
             <div className="tagDescription">

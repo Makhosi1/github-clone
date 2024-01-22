@@ -1,9 +1,38 @@
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import "./Profile.scss";
 
-export default function Profile({ searchValue }) {
+export default function Profile() {
+    const userData = useSelector( state => state.userData);
+    
+    return (
+        <>
+            <div className="profile-container">
+                <div className="profile-image" >
+                    <img src= {userData.avatar_url ? `${userData.avatar_url}` : "github-logo1.png"} alt="user profile" />
+                </div>
+                <div className="follow-div">
+                    <button>Followers | {userData.followers}</button>
 
-    const [data, setData] = useState([]);
+                </div>
+                <div className="following-div">
+                    <button>Following | {userData.following}</button>
+                </div>
+                <div className="loc-div">
+                    <button>Location | {userData.location ? `${userData.location}` : "No Location"} </button>
+                </div>
+            </div>
+            <div className="slogan">
+                <h3>{userData.name}</h3>
+                <p>{userData.login}</p>
+            </div>
+
+        </>
+    )
+}
+
+
+
+/*
 
     useEffect(() => {
         const profileStats = async () => {
@@ -19,30 +48,4 @@ export default function Profile({ searchValue }) {
         profileStats();
     }, [searchValue]
     );
-
-    return (
-        <>
-            <div className="profile-container">
-                <div className="profile-image" >
-                    <img src= {data.avatar_url} alt="github profile picture" />
-                </div>
-                <div className="follow-div">
-                    <button>Followers | {data.followers}</button>
-
-                </div>
-                <div className="following-div">
-                    <button>Following | {data.following}</button>
-                </div>
-                <div className="loc-div">
-                    <button>Location | {data.location ? `${data.location}` : "No Location"} </button>
-                </div>
-            </div>
-            <div className="slogan">
-                <h3>{data.name}</h3>
-                <p>{data.login}</p>
-            </div>
-
-        </>
-    )
-}
-
+*/

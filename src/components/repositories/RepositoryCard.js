@@ -1,30 +1,34 @@
-import { useEffect, useState } from "react";
 import "./RepositoryCard.scss";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-export default function RepositoryCard({ searchValue }) {
-    const [data, setData] = useState([]);
 
-    useEffect(() => {
-        const fetchRepoInfo = async () => {
-            try {
-                const results = await fetch(`https://api.github.com/users/${searchValue}/repos`);
-                const data = await results.json();
-                console.log(data);
-                setData(data);
-            } catch (error) {
-                console.log(error)
-            }
-        };
+export default function RepositoryCard({item}) {
+    return (
+        <div className="each-repo">
+            <Link className= "repos" to={`/repository/${item.name}`}>{item.name}</Link>
+            <p>{item.description}</p>
+                <FaStar id="star"/>
+                <p>{item.stargazers_count}</p>
+                <p>{item.language}</p>
+            <p>Last update: {item.updated_at}</p>
+        </div>
+    )
+};
+ /*
+ import "./RepositoryCard.scss";
+import { FaStar } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-        fetchRepoInfo();
+export default function RepositoryCard() {
+    const listOfRepos = useSelector( state => state.repositoriesData);
 
-    }, [searchValue]);
-
-    const repoDetail = data.length !== 0 ? (
-        data.slice(0, 4).map((item) => (
+    const repoDetail = listOfRepos.length !== 0 ? (
+        listOfRepos.slice(0, 4).map((item) => (
             <div className="each-repo" key={item.id}>
-                <h3>{item.name}</h3>
+                <Link className= "repos" 
+                to = "/repository/:repoId" >{item.name}</Link>
                 <p>{item.description}</p>
                     <FaStar id="star"/>
                     <p>{item.stargazers_count}</p>
@@ -40,28 +44,4 @@ export default function RepositoryCard({ searchValue }) {
     )
 };
 
-/*
-        {data.map((item) => (
-        <li key={item.id} >{item.name}</li>
-       ))}
-        */
-
-/* const repoDetail = data.length  !==0 ? (
-     data.slice(0, 4).map ((item) => ( 
-         <>
-     <div className="each-repo" key = {item.id}> 
-             <h3>{item.name}</h3>
-             <p>{item.description }</p>
-             <ul>
-                 <li>{item.forks_count }</li>
-                 <li>{item.stargazers_count }</li>
-                 <li>updated days ago</li>
-             </ul>
-         </div>
-         </>
- ))) : "No Repos found!";
-
-  <div>
-    {repoDetail}
-    </div>
- */
+*/
