@@ -1,0 +1,17 @@
+@use "./../scss/base";
+
+.navigatorButtons{
+    background-color: base.$secondary-color;
+    color: base.$color-white;
+    border: none;
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 20px 30px;
+    margin-left: 20px;
+}
+
+.navigatorLinks{
+    color: base.$color-white;
+    text-decoration: none;
+}

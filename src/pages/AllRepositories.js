@@ -2,6 +2,7 @@ import Profile from "../components/profile/Profile";
 import RepositoryCard from "../components/repositories/RepositoryCard";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "./../components/scss/pages.scss"
 
 export default function AllRepositories() {
 
@@ -15,15 +16,13 @@ export default function AllRepositories() {
         ))) : "No Repos found!";
     return (
         <>
-        <button>
-            <Link to="/" > Home</Link>
+        <button className="navButtons">
+            <Link className="navLinks" to="/" > Home</Link>
         </button>
         <Profile/>
-        <h2>List Of Repositories</h2>
-        <div style = {{ display:"grid"}}>
-        <div className="repos">
+        <h2 style= {{textAlign:"center"}}>List Of Repositories</h2>
+        <div className="repos" style = {{ flexDirection: "column",  marginLeft: "250px", width:"100%"}} >
             {repoDetail}
-        </div>
         </div>
         </>
     )

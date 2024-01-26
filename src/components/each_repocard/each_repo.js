@@ -2,18 +2,19 @@ import { useDispatch, useSelector } from "react-redux";
 import "./each_repo.scss";
 import { clearData, setEachRepoDetail } from "../../redux/actions/actions";
 import { FaSearch } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./each_repo.scss"
 
 export default function EachRepo() {
     const [repoName, setRepoName] = useState("");
     const userData = useSelector(state => state.userData);
     const dispatch = useDispatch();
     const eachRepoData = useSelector(state => state.eachRepoData);
-    const {repoId} = useParams();
-    console.log(repoId);
+    const { repoId } = useParams();
 
-
+    // to fetch user each repo detail and update store
     useEffect(() => {
         const getRepositoryDetails = async () => {
             const results = await fetch(
@@ -34,7 +35,7 @@ export default function EachRepo() {
         e.preventDefault();
 
         try {
-            // Fetch user data using the API  endpoint
+            // Search each repo data using the API  endpoint
             const eachRepoDataResponse = await fetch(`https://api.github.com/repos/${userData.login}/${repoName}`);
             const eachRepoData = await eachRepoDataResponse.json();
             // save eachRepoData to the redux store
@@ -48,7 +49,7 @@ export default function EachRepo() {
 
     return (
         <>
-            <div className="input-wrapper">
+            <div id="hero">
                 <form onSubmit={handleSearch}>
                     <FaSearch id="search-icon" />
                     <input
@@ -59,10 +60,12 @@ export default function EachRepo() {
                     />
                 </form>
             </div>
-            <div>
+            <div className="eachrepo">
                 <h3>{eachRepoData.name}</h3>
                 <p>{eachRepoData.description}</p>
                 <p>{eachRepoData.language}</p>
+              
+                <p>{eachRepoData.watchers}</p>
                 <p>{eachRepoData.visibility}</p>
             </div>
         </>

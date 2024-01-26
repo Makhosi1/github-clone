@@ -5,6 +5,7 @@ import { FaSearch } from "react-icons/fa";
 import { clearData, setRepositoriesData, setUserData } from "../../redux/actions/actions";
 
 export default function SearchForm() {
+
     const [searchValue, setSearchValue] = useState("");
     const dispatch = useDispatch();
 
@@ -28,6 +29,7 @@ export default function SearchForm() {
             // Fetch the repository data 
             const repositoriesDataResponse = await fetch(`https://api.github.com/users/${searchValue}/repos`);
             const repositoriesData = await repositoriesDataResponse.json();
+            console.log(repositoriesData);
 
             // save repositoriesData to the redux store 
             dispatch(setRepositoriesData(repositoriesData));
@@ -35,12 +37,10 @@ export default function SearchForm() {
             console.error(error);
             dispatch(clearData);
         }
-
-       
     }
 
     return (
-        <div className="input-wrapper">
+        <div className="hero">
             <form onSubmit={handleSearch}>
                 <FaSearch id="search-icon" />
                 <input
@@ -55,23 +55,3 @@ export default function SearchForm() {
 };
 
 
-/*
- const [searchValue,setSearchValue] = useState("");
-
-    
-
-    const user = async () => {
-        const results = await fetch(`https://api.github.com/users/makhosi1`)
-        .then((response) => response.json()); 
-
-         if (!results.error){
-            console.log (`User not found`)
-         }
-    };
-
-    useEffect (() => {
-        user();
-    }
-    )
-
-    */

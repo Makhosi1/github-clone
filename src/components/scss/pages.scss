@@ -5,3 +5,30 @@
     margin-left: 50%;
 }
 
+h2 {
+    margin-bottom: 20px;
+}
+
+.navButtons{
+    background-color: base.$secondary-color;
+    color: base.$color-white;
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 20px 30px;
+    margin-left: 20px;
+}
+
+.navLinks{
+    color: base.$color-white;
+    text-decoration: none;
+    margin-bottom: 100px;
+}
+
+/*.repos{
+    flex-direction: column;
+      margin-left: 250px;
+       width:100%;
+}
+*/

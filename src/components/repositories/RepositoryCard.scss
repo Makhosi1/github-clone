@@ -6,7 +6,6 @@
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    // flex-direction: column;
     margin-left: 10%;
     justify-content: space-between;
 
@@ -17,11 +16,28 @@
         border-radius: 10px;
         height: auto;
         background: linear-gradient(to right, rgba(19, 25, 48, 1), rgba(28, 28, 69, 0.4));
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
-    h3,
-    p {
+    h5 {
         padding-left: 20px;
+        font-weight: 400;
+    }
+    p{
+
+        display: inline;
+        padding: 20px 10px;
+        font-weight: 250;
+    }
+
+    .repoName{
+        color: white;
+        padding-top: 10px;
+        font-size: large;
+        font-weight: bold;
+        text-decoration: none;
+        margin-left: 20px;
     }
 
 }

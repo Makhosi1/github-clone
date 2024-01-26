@@ -47,3 +47,42 @@ header {
         padding-bottom: 20px;
     }
 }
+@media only screen and (max-width:320px){
+   
+    header{
+        // padding: 20px;
+        height: 100px;
+    }
+
+    .headertag img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .headertag{
+        // background-color: green;
+        height: 50px;
+        width: 50px;
+        margin: 20px;
+    }
+
+    .tagDescription{
+        display: none;
+    }
+    
+}
+
+@media only screen and (max-width:720px){
+
+    header{
+        display: flex;
+        flex-direction: row-reverse;
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+    .headertag{
+        margin-top: 20px;
+        margin-left:20px ;
+    }
+
+}

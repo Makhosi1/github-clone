@@ -10,7 +10,7 @@ import "./../components/scss/pages.scss"
 export default function Home() {
 
   const listOfRepos = useSelector( state => state.repositoriesData);
-    const repoDetail = listOfRepos.length !== 0 ? (
+    const repoDetail = Array.isArray(listOfRepos) && listOfRepos.length !== 0 ? (
         listOfRepos.slice(0, 4).map((item) => (
             <RepositoryCard
                 key={item.id}

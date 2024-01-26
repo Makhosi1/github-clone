@@ -1,19 +1,19 @@
 @use "./../scss/base";
 
-.input-wrapper{
-    
+.hero {
+
     background-color: base.$primary-color;
     width: 50%;
     height: 2.5rem;
     border-radius: 10px;
-    margin-left: 30% ;
+    margin-left: 30%;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    
-    
+
+
 }
-    
+
 input {
     border: none;
     background-color: transparent;
@@ -23,17 +23,56 @@ input {
     height: 100%;
     margin-left: 10px;
 }
-input:focus{
+
+input:focus {
     outline: none;
 }
-::placeholder{
+
+::placeholder {
     font-weight: lighter;
     color: grey;
     padding-left: 5px;
-    
+
 }
-#search-icon{
+
+#search-icon {
     padding-left: 10px;
     padding-top: 10px;
     color: grey;
+}
+
+@media only screen and (max-width:320px){
+    .hero{
+        // background-color: yellow;
+        width: 80%;
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width:720px) {
+
+    .hero {
+        margin-left: 20px;
+        margin-top: 50px;
+        margin-right: 5px;
+        height: 2.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: -20px;
+
+
+        form {
+            height: 2.5rem;
+            width: 100%;
+            display: flex;
+        }
+
+        ::placeholder {
+            padding-left: 10px;
+        }
+
+        #search-icon {
+            padding-left: 0px;
+        }
+    }
 }
